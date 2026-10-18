@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#07040d">
+<title>RG GAMER BOY FF</title>
+<style>
+:root{--bg:#08050f;--panel:#130c24;--panel2:#211337;--accent:#c72cff;--accent2:#ff2e91;--text:#faf6ff;--muted:#b8a9ca;--line:#38204e;--glow:0 0 26px #c72cff25}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;color:var(--text);background:radial-gradient(ellipse at 50% 0,#24103a 0,transparent 48%),var(--bg);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;min-height:100vh;transition:background .25s,color .25s}body.no-animations *,body.no-animations *:before,body.no-animations *:after{animation:none!important;transition:none!important;scroll-behavior:auto!important}body.has-bg-image{background-color:transparent!important;background-image:var(--custom-bg-image)!important;background-size:cover!important;background-position:center center!important;background-attachment:fixed!important;background-repeat:no-repeat!important}body.has-bg-image #start,body.has-bg-image #auth,body.has-bg-image #app{background:transparent!important}body.has-bg-image .topbar{background:#080510a8}body.no-stylish .fancy{background:none!important;color:var(--text)!important;-webkit-text-fill-color:var(--text)!important;text-shadow:none!important;letter-spacing:normal!important;animation:none!important}
+a{color:inherit;text-decoration:none}button,input,textarea,select{font:inherit}button{cursor:pointer}.hidden{display:none!important}.wrap{width:min(1100px,92%);margin:auto}.fancy{background:linear-gradient(110deg,#fff 0%,#fff 18%,var(--accent) 42%,var(--accent2) 62%,#fff 82%,#fff 100%);background-size:260% 100%;background-position:0% 50%;-webkit-background-clip:text;background-clip:text;color:transparent;text-shadow:0 0 24px #c72cff25;letter-spacing:-.7px;animation:textColorWave 6s ease-in-out infinite}
+@keyframes textColorWave{0%,100%{background-position:0% 50%;filter:brightness(1)}50%{background-position:100% 50%;filter:brightness(1.2)}}
+.welcome{animation:welcomeEnter .9s cubic-bezier(.2,.8,.2,1) both}
+@keyframes welcomeEnter{from{opacity:0;transform:translateY(18px) scale(.985)}to{opacity:1;transform:translateY(0) scale(1)}}
+.welcomebrand{animation:brandReveal .8s .18s ease-out both}
+@keyframes brandReveal{from{opacity:0;transform:translateX(-12px)}to{opacity:1;transform:translateX(0)}}
+.brandicon{animation:iconGlow 3.5s ease-in-out infinite}
+@keyframes iconGlow{0%,100%{filter:brightness(1);transform:translateY(0)}50%{filter:brightness(1.25);transform:translateY(-3px)}}
+.welcome .btn{animation:buttonBreath 3.2s 1s ease-in-out infinite}
+@keyframes buttonBreath{0%,100%{box-shadow:0 8px 26px #c72cff30;filter:brightness(1)}50%{box-shadow:0 8px 34px #c72cff70;filter:brightness(1.08)}}
+.eyebrow{animation:eyebrowFade 1s ease-out both}
+@keyframes eyebrowFade{from{opacity:0;letter-spacing:5px}to{opacity:1;letter-spacing:2px}}
+.hero h1{animation:headingRise .75s .1s ease-out both}
+@keyframes headingRise{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+/* Individual micro-animations for section labels and action buttons */
+.tile:nth-child(1) h3{animation:discordText 3.8s ease-in-out infinite}
+.tile:nth-child(2) h3{animation:followText 4.4s ease-in-out infinite}
+.tile:nth-child(3) h3{animation:videoText 3.2s ease-in-out infinite}
+.tile:nth-child(4) h3{animation:downloadText 3.6s ease-in-out infinite}
+.tile:nth-child(5) h3{animation:updateText 4.8s ease-in-out infinite}
+@keyframes discordText{0%,100%{text-shadow:0 0 0 transparent;transform:translateY(0)}50%{text-shadow:0 0 12px #7a9cff;transform:translateY(-2px)}}
+@keyframes followText{0%,100%{color:var(--text);letter-spacing:0}50%{color:#52e6b2;letter-spacing:.6px}}
+@keyframes videoText{0%,100%{text-shadow:0 0 0 transparent}50%{text-shadow:0 0 13px #ff4b75}}
+@keyframes downloadText{0%,100%{transform:translateY(0);text-shadow:0 0 0 transparent}35%{transform:translateY(-3px);text-shadow:0 0 14px #7bdcff}70%{transform:translateY(0)}}
+@keyframes updateText{0%,100%{opacity:1}50%{opacity:.72;text-shadow:0 0 12px #e6a2ff}}
+.tile:nth-child(1) [data-page="discord"]{animation:discordButton 2.8s ease-in-out infinite}
+.tile:nth-child(2) [data-page="whatsapp"]{animation:followButton 3.5s ease-in-out infinite}
+.tile:nth-child(3) [data-page="youtube"]{animation:videoButton 3s ease-in-out infinite}
+.tile:nth-child(4) [data-page="downloads"]{animation:downloadButton 3.2s ease-in-out infinite}
+.tile:nth-child(5) [data-page="updates"]{animation:updateButton 4s ease-in-out infinite}
+@keyframes discordButton{0%,100%{box-shadow:0 0 0 #7a9cff00}50%{box-shadow:0 0 18px #7a9cff66}}
+@keyframes followButton{0%,100%{filter:saturate(1)}50%{filter:saturate(1.8) brightness(1.08)}}
+@keyframes videoButton{0%,100%{transform:scale(1)}50%{transform:scale(1.035)}}
+@keyframes downloadButton{0%,100%{box-shadow:0 0 0 #7bdcff00;transform:translateY(0)}50%{box-shadow:0 0 17px #7bdcff77;transform:translateY(-2px)}}
+@keyframes updateButton{0%,100%{filter:brightness(1)}50%{filter:brightness(1.18)}}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:0;border-radius:12px;padding:12px 17px;font-weight:800;color:#fff;background:linear-gradient(105deg,var(--accent),var(--accent2));box-shadow:0 8px 26px #c72cff30;transition:transform .2s,filter .2s}.btn:hover{transform:translateY(-2px);filter:brightness(1.1)}.btn.secondary{background:#ffffff08;border:1px solid #ffffff24;box-shadow:none}.btn.small{padding:9px 12px;font-size:12px}.muted{color:var(--muted)}
+.brand{display:flex;align-items:center;gap:10px;font-weight:950;letter-spacing:.3px}.brandicon{width:39px;height:39px;border-radius:13px;display:grid;place-items:center;background:linear-gradient(140deg,var(--accent),var(--accent2));box-shadow:var(--glow);font-size:21px}
+/* welcome */
+#start{min-height:100svh;display:grid;place-items:center;padding:24px;background:radial-gradient(ellipse at 50% 0,#28103e 0,transparent 56%),#050409}.welcome{position:relative;width:min(940px,100%);min-height:420px;border:1px solid #ffffff18;border-radius:24px;background:linear-gradient(145deg,#050508ed,#10071bee);padding:clamp(25px,5vw,55px);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;box-shadow:0 25px 100px #0009;overflow:hidden}.welcome:before{content:"";position:absolute;width:340px;height:340px;border-radius:50%;background:var(--accent);filter:blur(140px);opacity:.12;animation:float 8s ease-in-out infinite}.welcome>*{position:relative}.welcomebrand{position:absolute!important;top:26px;left:28px}.welcome nav{display:none!important}.welcome h1{font-size:clamp(30px,6vw,58px);line-height:1.15;margin:24px 0 28px;overflow-wrap:anywhere}.welcome p{max-width:600px;color:#c4b6d5;line-height:1.75;margin:0 0 26px}.welcome .btn{min-width:155px}
+@keyframes float{0%,100%{transform:translate(-30px,-20px)}50%{transform:translate(30px,20px)}}
+/* auth */
+#auth{min-height:100svh;display:grid;place-items:center;padding:22px;background:radial-gradient(ellipse at 50% 10%,#281144 0,transparent 55%),#07050e}.authbox{width:min(430px,100%);padding:29px;border-radius:22px;border:1px solid #ffffff1c;background:#100a20;box-shadow:0 25px 90px #0009}.authbox .brand{justify-content:center;font-size:18px}.authbox h2{text-align:center;margin:24px 0 7px}.authbox>p{text-align:center;color:var(--muted);font-size:13px;line-height:1.6;margin:0 0 22px}.field{display:block;margin:14px 0}.field>span{display:block;font-size:12px;color:#d9cce9;margin-bottom:7px}.field input,.field textarea,.field select{width:100%;padding:12px 13px;border-radius:10px;border:1px solid #3b2857;background:#090611;color:white;outline:none}.field input:focus,.field textarea:focus{border-color:var(--accent)}.authbox .btn{width:100%;margin-top:7px}.hint{font-size:11px;color:#9c8daf;line-height:1.6;margin-top:15px}.error{color:#ff8eab;font-size:12px;line-height:1.5;margin-top:10px}
+/* dashboard */
+#app{min-height:100svh;background:radial-gradient(ellipse at 50% 0,#21103a 0,transparent 50%),var(--bg)}.topbar{height:70px;border-bottom:1px solid #ffffff13;display:flex;align-items:center;justify-content:space-between;padding:0 max(4%,calc((100% - 1100px)/2));background:#080510d9;backdrop-filter:blur(12px);position:sticky;top:0;z-index:5}.topbar .brand{font-size:16px}.topnav{display:flex;align-items:center;gap:18px;font-size:12px;color:#d9cce8}.topnav a:hover{color:#e5aaff}.hero{text-align:center;padding:53px 0 25px}.eyebrow{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:#d59aff}.hero h1{font-size:clamp(30px,5vw,49px);margin:12px 0}.hero p{max-width:630px;margin:auto;color:var(--muted);line-height:1.7;font-size:13px}.sectionhead{display:flex;justify-content:space-between;align-items:end;gap:12px;margin:27px 0 15px}.sectionhead h2{margin:0;font-size:21px}.sectionhead p{margin:5px 0 0;font-size:12px;color:var(--muted)}.tag{font-size:10px;letter-spacing:1px;color:#e3a6ff;border:1px solid #c72cff55;background:#c72cff12;padding:7px 10px;border-radius:8px}
+.tiles{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:16px}.tile{min-height:180px;padding:17px 12px;border:1px solid #ffffff17;border-radius:17px;background:linear-gradient(150deg,#1b1032,#100a20);text-align:center;display:flex;flex-direction:column;align-items:center;justify-content:center;transition:.22s;animation:rise .6s both}.tile:nth-child(2){animation-delay:.06s}.tile:nth-child(3){animation-delay:.12s}.tile:nth-child(4){animation-delay:.18s}.tile:nth-child(5){animation-delay:.24s}@keyframes rise{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}.tile:hover{transform:translateY(-4px);border-color:#c72cff88;box-shadow:0 12px 35px #8b26ff18}.tile .emoji{font-size:33px;margin-bottom:10px}.tile h3{font-size:14px;line-height:1.35;margin:0 0 8px;overflow-wrap:anywhere}.tile p{font-size:11px;line-height:1.65;color:var(--muted);margin:0 0 14px;min-height:34px}.tile .btn{font-size:11px;padding:9px 11px;box-shadow:none}
+.panel{margin:20px 0 28px;border:1px solid #ffffff17;background:#100a20d9;border-radius:17px;padding:21px}.panel h2{margin:0 0 7px}.panel>p{color:var(--muted);font-size:13px;line-height:1.65}.linklist{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:16px}.linkrow{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:13px;border:1px solid #ffffff14;background:#ffffff05;border-radius:12px;font-size:13px}.linkrow small{display:block;color:var(--muted);margin-top:4px;line-height:1.5}.back{margin:0 0 12px}.chatbox{height:360px;display:flex;flex-direction:column;border:1px solid #40255d;border-radius:15px;overflow:hidden;background:#090611}.messages{flex:1;overflow:auto;padding:14px;display:flex;flex-direction:column;gap:10px}.bubble{max-width:92%;padding:12px 14px;margin:2px 0;border-radius:13px;background:#21143a;font-size:13px;line-height:1.6;white-space:pre-wrap;overflow-wrap:anywhere}.bubble.user{align-self:flex-end;background:#6827a0}.bubble a{color:#e4b4ff;text-decoration:underline}.chatform{display:flex;gap:8px;padding:10px;border-top:1px solid #ffffff16}.chatform input{flex:1;min-width:0;background:#100a20;border:1px solid #402b5b;border-radius:10px;padding:12px;color:white}.status{font-size:11px;color:#a897bb;line-height:1.6;margin-top:10px}.footer{border-top:1px solid #ffffff13;color:#9e91b0;padding:22px 0;margin-top:32px;font-size:11px;display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
+/* customize */
+.modalback{position:fixed;inset:0;background:#000c;display:none;align-items:center;justify-content:center;padding:15px;z-index:20}.modalback.show{display:flex}.modal{width:min(520px,100%);max-height:92svh;overflow:auto;background:#100a20;border:1px solid #4a3068;border-radius:19px;padding:20px;box-shadow:0 30px 100px #000b}.modalhead{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:10px}.modalhead h2{font-size:19px;margin:0}.close{width:34px;height:34px;border:1px solid #ffffff20;border-radius:9px;background:#ffffff0a;color:white}.switchrow{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:11px 0;border-bottom:1px solid #ffffff12;font-size:13px}.switchrow input{accent-color:var(--accent);width:18px;height:18px}.modalactions{display:flex;gap:10px;margin-top:17px}.modalactions .btn{flex:1}.toast{position:fixed;left:50%;bottom:20px;transform:translate(-50%,20px);opacity:0;background:#211735;border:1px solid #563878;color:white;padding:11px 15px;border-radius:11px;z-index:30;transition:.2s;font-size:12px;pointer-events:none}.toast.show{opacity:1;transform:translate(-50%,0)}
+@media(max-width:800px){.tiles{grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.tile:last-child{grid-column:1/-1}.topnav{gap:10px}.topnav a:nth-child(1){display:none}.linklist{grid-template-columns:1fr}}
+@media(max-width:440px){.topbar{padding:0 4%;height:63px}.topbar .brand{font-size:12px;gap:6px}.brandicon{width:32px;height:32px;font-size:17px}.topnav{gap:9px;font-size:11px}.tiles{gap:9px}.tile{min-height:160px;padding:13px 8px}.tile .emoji{font-size:29px}.welcome{min-height:410px}.welcomebrand{left:18px;top:18px}.welcome nav{right:18px;top:30px;gap:10px;font-size:10px}.welcome h1{margin-top:55px}.linkrow{padding:10px}}
+</style>
+</head>
+<body>
+<section id="start">
+ <div class="welcome">
+  <div class="brand welcomebrand"><span class="brandicon">🎮</span><span>RG GAMER BOY FF</span></div>
+  <h1 class="fancy" style="margin:24px 0 28px">RG GAMER BOY FF</h1>
+  <button class="btn" id="getStarted">Get Started →</button>
+ </div>
+</section>
+<section id="auth" class="hidden">
+ <div class="authbox">
+  <div class="brand"><span class="brandicon">🎮</span> RG GAMER BOY FF</div>
+  <h2 id="authTitle">Create Your Account</h2><p id="authSubtitle">Choose your own username and password to continue.</p>
+  <form id="authForm"><label class="field"><span>Username</span><input id="username" autocomplete="username" minlength="3" maxlength="32" placeholder="Create a username" required></label><label class="field"><span>Password</span><input id="password" type="password" autocomplete="new-password" minlength="6" placeholder="Create a password (6+ characters)" required></label><label class="field" id="confirmField"><span>Confirm Password</span><input id="confirmPassword" type="password" autocomplete="new-password" minlength="6" placeholder="Re-enter your password" required></label><button class="btn" id="authSubmit" type="submit">Create Account</button></form>
+  <div class="error" id="authError"></div><div class="hint" id="authHint">Prototype account is stored only in this browser on this device. This is not secure authentication for a public website.</div>
+  <button class="btn secondary" style="width:100%;margin-top:12px" id="backStart">Back</button>
+ </div>
+</section>
+<section id="app" class="hidden">
+ <header class="topbar"><a href="#" class="brand" id="homeLink"><span class="brandicon">🎮</span><span>RG GAMER BOY FF</span></a><nav class="topnav"><a href="#" id="homeNav">Home</a><a href="#" id="aiNav">AI Chat</a><button class="btn small secondary" id="customizeBtn">⚙ Customize</button><a href="#" id="signOut">Sign Out</a></nav></header>
+ <main class="wrap">
+  <div id="dashboard">
+   <section class="hero"><div class="eyebrow">YOUR COMMUNITY • YOUR GAME</div><h1 class="fancy">Welcome to RG GAMER BOY FF</h1><p>Everything you need, all in one place. Choose a section to open its dedicated page.</p></section>
+   <div class="sectionhead"><div><h2>Explore the Hub</h2><p>Community links, videos, downloads, and news.</p></div><span class="tag">5 SECTIONS</span></div>
+   <section class="tiles">
+    <article class="tile"><div class="emoji">💬</div><h3>Discord</h3><p>Join our official community.</p><button class="btn" data-page="discord">Join Discord ↗</button></article>
+    <article class="tile"><div class="emoji">📱</div><h3>WhatsApp</h3><p>Follow channel updates.</p><button class="btn" data-page="whatsapp">Follow Channel ↗</button></article>
+    <article class="tile"><div class="emoji">▶️</div><h3>YouTube</h3><p>Watch videos and gameplay.</p><button class="btn" data-page="youtube">Watch Videos ↗</button></article>
+    <article class="tile"><div class="emoji">📥</div><h3>Old Free Fire</h3><p>Open the Old Free Fire page.</p><button class="btn" data-page="downloads">Visit Download ↗</button></article>
+    <article class="tile"><div class="emoji">✨</div><h3>Updates</h3><p>Latest news and announcements.</p><button class="btn" data-page="updates">View Updates ↗</button></article>
+   </section>
+   <section class="panel"><h2>🤖 Chat with RG AI</h2><p>Ask about Discord, WhatsApp, YouTube, Old Free Fire, or website navigation.</p><button class="btn" id="openAI">Open AI Chat →</button><div class="status">The prototype includes smart demo replies. Live AI requires a secure AI backend.</div></section>
+  </div>
+  <div id="detail" class="hidden"></div>
+  <footer class="footer"><span>© <span id="year"></span> RG GAMER BOY FF</span><span>Community • Free Fire • Updates</span></footer>
+ </main>
+</section>
+<div class="modalback" id="customModal"><div class="modal">
+ <div class="modalhead"><h2>⚙️ Customize Website</h2><button class="close" id="closeCustom">✕</button></div>
+ <p class="muted" style="font-size:12px;line-height:1.6">🔐 Enter your customization key to unlock website settings.</p>
+ <div id="customPasswordStep"><label class="field"><span>Customization Key</span><input id="customPass" type="password" placeholder="Enter your customization key" autocomplete="off"></label><div class="error" id="customPassError"></div><button class="btn" style="width:100%" id="unlockCustom">🔓 Unlock Customization</button></div>
+ <div id="customControls" class="hidden">
+  <label class="field"><span>🎨 Accent Color</span><input id="accentInput" type="color" value="#c72cff" style="width:100%;height:43px;background:#090611;border:1px solid #3b2857;border-radius:10px;padding:4px"></label>
+  <label class="field"><span>🖌️ Background Color</span><input id="bgInput" type="color" value="#08050f" style="width:100%;height:43px;background:#090611;border:1px solid #3b2857;border-radius:10px;padding:4px"></label>
+  <label class="field"><span>🌄 Background Image URL (optional)</span><input id="bgImageInput" placeholder="https://example.com/background.jpg"></label>
+  <label class="field"><span>📤 Upload Background Image</span><input id="bgUpload" type="file" accept="image/*"></label>
+  <label class="field"><span>✏️ Custom Text / Website Subtitle</span><input id="subtitleInput" maxlength="120" placeholder="Everything you need, all in one place."></label>
+  <label class="switchrow"><span>✨ Enable animations</span><input type="checkbox" id="animationsInput" checked></label>
+  <label class="switchrow"><span>🌈 Enable stylish gradient text</span><input type="checkbox" id="stylishInput" checked></label>
+  <div class="modalactions"><button class="btn secondary" id="resetCustom">♻️ Reset</button><button class="btn" id="saveCustom">💾 Save Changes</button></div>
+  <div class="status">These settings are saved locally in this browser. Uploaded images are stored on this device only.</div>
+ </div>
+</div></div>
+<div class="toast" id="toast"></div>
+<script>
+const CUSTOMIZATION_KEY='KEY-RG-FF-WEB-OLD-FF2-2023';
+const LINKS={
+ discord:'https://discord.gg/8WJDCEGZDs',
+ youtube:'https://www.youtube.com/@RG_GAMER_BOY_FF',
+ whatsapp:'https://whatsapp.com/channel/0029VbD9yigGJP8Hkf8xWw3I',
+ downloads:'https://rggamerboyff.github.io/RG-GAMER-BOY-FF-NOSTALGIA-2022-APP/',
+ updates:''
+};
+const $=id=>document.getElementById(id);
+const defaults={accent:'#c72cff',bg:'#08050f',bgImage:'',subtitle:'Everything you need, all in one place. Choose a section to open its dedicated page.',animations:true,stylish:true};
+let prefs={...defaults},customHash=localStorage.getItem('rgff-custom-pass-hash')||'';
+function showScreen(id){['start','auth','app'].forEach(x=>$(x).classList.toggle('hidden',x!==id));window.scrollTo(0,0)}
+function toast(s){$('toast').textContent=s;$('toast').classList.add('show');setTimeout(()=>$('toast').classList.remove('show'),2300)}
+function applyPrefs(){document.documentElement.style.setProperty('--accent',prefs.accent);document.documentElement.style.setProperty('--bg',prefs.bg);document.body.classList.toggle('no-animations',!prefs.animations);document.body.classList.toggle('no-stylish',!prefs.stylish);if(prefs.bgImage){const safeImage=JSON.stringify(prefs.bgImage);document.body.classList.add('has-bg-image');document.body.style.setProperty('--custom-bg-image',`url(${safeImage})`);document.body.style.backgroundImage=`url(${safeImage})`;}else{document.body.classList.remove('has-bg-image');document.body.style.removeProperty('--custom-bg-image');document.body.style.backgroundImage='';}document.body.style.backgroundSize='cover';document.body.style.backgroundPosition='center center';document.body.style.backgroundAttachment='fixed';document.body.style.backgroundRepeat='no-repeat';const p=document.querySelector('.hero p');if(p)p.textContent=prefs.subtitle||defaults.subtitle;}
+function loadPrefs(){try{prefs={...defaults,...JSON.parse(localStorage.getItem('rgff-custom-prefs')||'{}')}}catch{prefs={...defaults}}applyPrefs()}
+function hashText(s){let h=2166136261;for(let i=0;i<s.length;i++){h^=s.charCodeAt(i);h=Math.imul(h,16777619)}return (h>>>0).toString(16)}
+function authMode(){const exists=!!localStorage.getItem('rgff-account');$('authTitle').textContent=exists?'Welcome Back':'Create Your Account';$('authSubtitle').textContent=exists?'Sign in with the account you created on this device.':'Choose your own username and password to continue.';$('confirmField').classList.toggle('hidden',exists);$('confirmPassword').required=!exists;$('authSubmit').textContent=exists?'Sign In':'Create Account';$('password').autocomplete=exists?'current-password':'new-password';$('authError').textContent='';}
+$('getStarted').onclick=()=>{authMode();showScreen('auth')};$('backStart').onclick=()=>showScreen('start');
+$('authForm').onsubmit=e=>{e.preventDefault();const username=$('username').value.trim(),password=$('password').value;let saved;try{saved=JSON.parse(localStorage.getItem('rgff-account')||'null')}catch{}
+ if(saved){if(username!==saved.username||hashText(password)!==saved.passHash){$('authError').textContent='Incorrect username or password. Please try again.';return}localStorage.setItem('rgff-logged-in','yes');showScreen('app');return}
+ if(username.length<3||password.length<6){$('authError').textContent='Username must be at least 3 characters and password at least 6 characters.';return}if(password!==$('confirmPassword').value){$('authError').textContent='Passwords do not match.';return}
+ localStorage.setItem('rgff-account',JSON.stringify({username,passHash:hashText(password)}));localStorage.setItem('rgff-logged-in','yes');showScreen('app');toast('Account created on this device.');
+};
+function showDashboard(){ $('detail').classList.add('hidden');$('dashboard').classList.remove('hidden');window.scrollTo({top:0,behavior:'smooth'});}
+const pages={
+ discord:{icon:'💬',title:'Discord Community',desc:'Join the official RG GAMER BOY FF Discord server.',items:[['Official Discord Server','Join our community and chat with other gamers.',LINKS.discord,'Join Discord ↗']]},
+ whatsapp:{icon:'📱',title:'WhatsApp Channel',desc:'Follow the official channel for news and announcements.',items:[['Official WhatsApp Channel','Get updates directly on WhatsApp.',LINKS.whatsapp,'Follow Channel ↗']]},
+ youtube:{icon:'▶️',title:'YouTube Channel',desc:'Watch RG GAMER BOY FF videos, gameplay, and content.',items:[['RG GAMER BOY FF on YouTube','Visit the official YouTube channel.',LINKS.youtube,'Watch on YouTube ↗']]},
+ downloads:{icon:'📥',title:'Old Free Fire',desc:'Open the Old Free Fire page to see the available app information and download options.',items:[['Old Free Fire','Open the Old Free Fire page.',LINKS.downloads,'Open Old Free Fire ↗']]},
+ updates:{icon:'✨',title:'Updates',desc:'Sorry, no updates are available right now. Updates will be available in 2027.',items:[['No Updates Available','Sorry, no updates are available right now. Please check back in 2027.','', 'Coming in 2027']]}
+};
+function openPage(key){if(key==='ai'){openAI();return}const d=pages[key];if(!d)return;$('dashboard').classList.add('hidden');const el=$('detail');el.classList.remove('hidden');el.innerHTML=`<section class="hero"><div class="eyebrow">RG GAMER BOY FF / ${key.toUpperCase()}</div><h1 class="fancy">${d.icon} ${d.title}</h1><p>${d.desc}</p></section><button class="btn secondary back" id="backDash">← Back to Dashboard</button><section class="panel"><h2>${d.title}</h2><p>${d.desc}</p><div class="linklist">${d.items.map((it,i)=>`<div class="linkrow"><div><strong>${it[0]}</strong><small>${it[1]}</small></div><button class="btn small" data-item="${i}">${it[3]}</button></div>`).join('')}</div></section>`;$('backDash').onclick=showDashboard;el.querySelectorAll('[data-item]').forEach(b=>b.onclick=()=>{const it=d.items[+b.dataset.item];if(it[2])window.location.href=it[2];else toast('This section will be updated soon.')});window.scrollTo({top:0,behavior:'smooth'});}
+document.querySelectorAll('[data-page]').forEach(b=>b.onclick=()=>{const key=b.dataset.page;if(LINKS[key]){window.location.href=LINKS[key];return;}openPage(key)});$('homeLink').onclick=e=>{e.preventDefault();showDashboard()};$('homeNav').onclick=e=>{e.preventDefault();showDashboard()};$('signOut').onclick=e=>{e.preventDefault();localStorage.removeItem('rgff-logged-in');showScreen('start')};
+function openAI(){$('dashboard').classList.add('hidden');const el=$('detail');el.classList.remove('hidden');el.innerHTML=`<section class="hero"><div class="eyebrow">SMART COMMUNITY HELPER</div><h1 class="fancy">🤖 RG AI Chat</h1><p>Ask about our Discord, WhatsApp, YouTube, Old Free Fire, or the website.</p></section><button class="btn secondary back" id="backDash">← Back to Dashboard</button><section class="panel"><div class="chatbox"><div class="messages" id="messages"><div class="bubble">Hello! 👋 I'm RG AI, your community assistant. How can I help you today?</div></div><form class="chatform" id="chatForm"><input id="chatQuestion" autocomplete="off" placeholder="Type your message..." required maxlength="500"><button class="btn">Send</button></form></div><div class="status" id="aiStatus">RG AI replies using built-in responses. A live AI service is not connected.</div></section>`;$('backDash').onclick=showDashboard;$('chatForm').onsubmit=e=>{e.preventDefault();const inp=$('chatQuestion'),q=inp.value.trim();if(!q)return;addBubble(q,true);inp.value='';$('aiStatus').textContent='RG AI is preparing a reply…';setTimeout(()=>{try{const response=answer(q);if(!response)throw new Error('NO_REPLY');addBubble(response,false);$('aiStatus').textContent='RG AI is ready.'}catch(err){addBubble('AI is currently unavailable. Something went wrong while preparing your response. Please try again later.',false);$('aiStatus').textContent='AI not available at this time.'}},250)};window.scrollTo({top:0,behavior:'smooth'});}
+function addBubble(text,user){const m=$('messages'),b=document.createElement('div');b.className='bubble'+(user?' user':'');
+ if(user){b.textContent=text;}else{const urlPattern=/(https?:\/\/[^\s<]+)/g;let last=0,match;while((match=urlPattern.exec(text))!==null){b.appendChild(document.createTextNode(text.slice(last,match.index)));const a=document.createElement('a');a.href=match[0].replace(/[),.!?]+$/,'');a.textContent=a.href;a.target='_blank';a.rel='noopener noreferrer';b.appendChild(a);last=match.index+match[0].length;}b.appendChild(document.createTextNode(text.slice(last)));}
+ m.appendChild(b);m.scrollTop=m.scrollHeight}
+function answer(raw){
+ const original=String(raw||'').trim();
+ const q=original.toLowerCase().replace(/[!?.,]/g,'').trim();
+ if(!q)return "I didn't receive a message. What would you like to talk about?";
+ // Keep the owner-defined command and community-link rules fixed.
+ if(original.toUpperCase()==='/RG-WEB-KEY')return 'Your website customization key is: '+CUSTOMIZATION_KEY+'\n\nEnter this key in Customize Website to unlock the settings.';
+ if(/\bwhatsapp\b|\bwa channel\b/.test(q))return LINKS.whatsapp;
+ if(/\byoutube\b|\bvideo\b|\bgameplay\b|\bsubscribe\b/.test(q))return 'Here is the official RG GAMER BOY FF YouTube channel: '+LINKS.youtube+'\n\nVisit the channel to watch videos, gameplay, and other content from RG GAMER BOY FF.';
+ if(/\bdiscord\b|server invite|join the server/.test(q))return 'Here is the official RG GAMER BOY FF Discord invite: '+LINKS.discord+'\n\nOpen the invite to join the community, chat with other members, and take part in server discussions.';
+ if(/\b(free fire|freefire|ff)\b/.test(q)&&/\b2022\b/.test(q))return 'Old Free Fire 2022 page: '+LINKS.downloads+'\n\nFree Fire in 2022 featured its own seasonal updates, events, character and weapon balance changes, and gameplay meta. Exact content varied by update and region; check the linked page for the available nostalgia app details.';
+ if(/\b(free fire|freefire|ff)\b/.test(q)&&/\b2019\b/.test(q))return 'Free Fire 2019 information: 2019 was an earlier era of Free Fire, with a different set of characters, weapons, maps, events, and gameplay balance than modern versions. The exact details depended on the update and region. For the available Old Free Fire nostalgia page, visit: '+LINKS.downloads;
+ if(/^(hi|hello|hey|heya|hii|good morning|good afternoon|good evening)$/.test(q))return 'Hello! I’m RG AI, the RG GAMER BOY FF community assistant. What can I help you with today?';
+ if(/your name|who are you|what are you/.test(q))return "My name is RG AI. I’m the RG GAMER BOY FF community assistant.";
+ if(/how are you|how r u|how're you/.test(q))return "I'm doing well, thanks for asking! What would you like to talk about?";
+ if(/thank|thanks|thx|\bty\b/.test(q))return "You're welcome! Let me know if you have another question.";
+ if(/^(bye|goodbye|see you|good night)$/.test(q))return 'Goodbye! Thanks for visiting RG GAMER BOY FF.';
+ if(/\bgo\b/.test(q))return 'Go where? Do you want to open a page, visit a community link, or go somewhere else? Tell me what you mean and I’ll help.';
+ if(/customi[sz]e|change color|background|animation|slow phone|stylish text/.test(q))return 'Open “Customize Website”, enter your customization key, change the settings you want, and press Save Changes. Settings are saved in this browser on this device.';
+ if(/update|latest news|announcement/.test(q))return 'You can check the Updates section from the main dashboard for website announcements.';
+ if(/what can you do|help|commands|options/.test(q))return 'I’m RG AI, the RG GAMER BOY FF community assistant. Ask me about the website or community, or ask a general question.';
+ // Front-end fallback only. Open-ended answers require a securely connected AI backend.
+ return "I’m RG AI. I’ll try to help with your question: “"+original.slice(0,180)+"”. I need a live AI connection to reliably answer open-ended questions, so I can’t guarantee a correct, independent answer to every topic yet.";
+}
+$('aiNav').onclick=e=>{e.preventDefault();openAI()};$('openAI').onclick=openAI;
+// Customize password setup and controls
+let pendingCustom=false,uploadedDataUrl='';
+$('customizeBtn').onclick=()=>{$('customModal').classList.add('show');$('customControls').classList.add('hidden');$('customPasswordStep').classList.remove('hidden');$('customPass').value='';$('customPassError').textContent='';};
+$('closeCustom').onclick=()=>$('customModal').classList.remove('show');$('customModal').addEventListener('click',e=>{if(e.target===$('customModal'))$('customModal').classList.remove('show')});
+$('unlockCustom').onclick=()=>{const p=$('customPass').value;if(p!==CUSTOMIZATION_KEY){$('customPassError').textContent='Incorrect key. Please try again.';return}
+ $('customPasswordStep').classList.add('hidden');$('customControls').classList.remove('hidden');$('accentInput').value=prefs.accent;$('bgInput').value=prefs.bg;$('bgImageInput').value=prefs.bgImage.startsWith('data:')?'':prefs.bgImage;$('subtitleInput').value=prefs.subtitle;$('animationsInput').checked=prefs.animations;$('stylishInput').checked=prefs.stylish;};
+$('bgUpload').onchange=e=>{const f=e.target.files&&e.target.files[0];if(!f)return;if(!f.type.startsWith('image/')){toast('Please choose an image file.');return}const reader=new FileReader();reader.onload=()=>{const image=new Image();image.onload=()=>{try{const max=1600,scale=Math.min(1,max/Math.max(image.naturalWidth,image.naturalHeight));const canvas=document.createElement('canvas');canvas.width=Math.max(1,Math.round(image.naturalWidth*scale));canvas.height=Math.max(1,Math.round(image.naturalHeight*scale));canvas.getContext('2d').drawImage(image,0,0,canvas.width,canvas.height);let data=canvas.toDataURL('image/jpeg',0.78);if(data.length>1800000)data=canvas.toDataURL('image/jpeg',0.58);uploadedDataUrl=data;$('bgImageInput').value='Uploaded image selected';toast('Background image selected. Press Save Changes.')}catch(err){toast('Could not process this image. Try another image.')}};image.onerror=()=>toast('Unable to open this image. Please try another file.');image.src=reader.result};reader.onerror=()=>toast('Unable to read this image. Please try another file.');reader.readAsDataURL(f)};
+$('saveCustom').onclick=()=>{let img=uploadedDataUrl||$('bgImageInput').value.trim();if(img&&!img.startsWith('data:')&&!/^https?:\/\//i.test(img)){toast('Enter a valid image URL or upload an image.');return}prefs={accent:$('accentInput').value,bg:$('bgInput').value,bgImage:img,subtitle:$('subtitleInput').value.trim()||defaults.subtitle,animations:$('animationsInput').checked,stylish:$('stylishInput').checked};try{localStorage.setItem('rgff-custom-prefs',JSON.stringify(prefs));applyPrefs();$('customModal').classList.remove('show');uploadedDataUrl='';toast('Website customization saved!')}catch(e){toast('Could not save settings. Try a smaller background image.')}};
+$('resetCustom').onclick=()=>{prefs={...defaults};uploadedDataUrl='';localStorage.removeItem('rgff-custom-prefs');applyPrefs();$('accentInput').value=prefs.accent;$('bgInput').value=prefs.bg;$('bgImageInput').value='';$('subtitleInput').value=prefs.subtitle;$('animationsInput').checked=true;$('stylishInput').checked=true;toast('Customization reset.')};
+$('year').textContent=new Date().getFullYear();loadPrefs();
+// Persistent sign-in convenience: this is a local prototype, not secure production authentication.
+if(localStorage.getItem('rgff-logged-in')==='yes')showScreen('app');
+</script>
+</body></html>
