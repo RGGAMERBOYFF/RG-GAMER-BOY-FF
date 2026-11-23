@@ -44,7 +44,7 @@ const defaultPhones=[
 {name:"RG LEGEND",storageMB:750,battery:85,chance:5},
 {name:"RG ULTRA",storageMB:1024,battery:90,chance:3},
 {name:"RG ELITE PRO MAX",storageMB:1536,battery:95,chance:2},
-{name:"RG LITE PRO MAX",storageMB:2048,battery:100,chance:1}
+{name:"RG ELITE ULTRA PRO MAX",storageMB:2048,battery:100,chance:1}
 ];
 let mode="signup",authInitialized=false,settings={},phones=defaultPhones,currentUser=null,wallet=null,stopWallet=null,stopGifts=null,stopRelease=null,batteryTimer=null,lastBatteryTick=Date.now(),wheelRotation=0,walletReadyPromise=Promise.resolve(true),walletReadyResolve=null;
 const fmt=n=>{n=Math.max(0,Number(n)||0);if(n>=GB)return(n/GB).toFixed(n%GB?2:0)+" GB";if(n>=MB)return(n/MB).toFixed(n%MB?1:0)+" MB";return Math.round(n/1024)+" KB"};
